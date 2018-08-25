@@ -1,0 +1,1391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="calib">
+      <UniqueIdentifier>{dd8b8d2c-fec2-4c19-85ce-f914462d44d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dfwavelet">
+      <UniqueIdentifier>{ff18d965-6a19-4af1-bb66-5a79cea7bb17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="grecon">
+      <UniqueIdentifier>{d92c68c8-6a5b-4277-af30-049f2cef0b50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ismrm">
+      <UniqueIdentifier>{c8d87fb5-6694-470a-91f8-889ed1617fdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="iter">
+      <UniqueIdentifier>{22f3e192-754f-4bc3-a065-1a002a48cd3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lapacke">
+      <UniqueIdentifier>{647a154b-eab3-405a-98e1-f19e7dd0918b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="linops">
+      <UniqueIdentifier>{b0121f37-3bcb-4195-8792-4ad11b644361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lowrank">
+      <UniqueIdentifier>{1faa1b79-23fa-4d5e-8c0d-5264a46c3532}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc">
+      <UniqueIdentifier>{05e02b42-77f3-48d7-9aa7-b2d9939fa675}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="nlops">
+      <UniqueIdentifier>{634e47f1-1562-4f08-9f5e-d44e48df8c1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="noir">
+      <UniqueIdentifier>{facd26e1-d95b-40c7-a445-4a2f841dabb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="noncart">
+      <UniqueIdentifier>{04236a1c-e3de-40fd-8b89-caef02dc6111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="num">
+      <UniqueIdentifier>{add8d18d-40ee-4491-b487-dc73e405f1a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="python">
+      <UniqueIdentifier>{44bea268-b68b-4801-b032-eacc43336717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sake">
+      <UniqueIdentifier>{87bcbfff-94da-469b-958f-bd106690c984}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sense">
+      <UniqueIdentifier>{b5e7c902-2fad-412b-9b65-071dcda683b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simu">
+      <UniqueIdentifier>{86c371d0-83a2-49d2-a189-dc6879534e78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wavelet">
+      <UniqueIdentifier>{cd282ea1-deaa-4b27-8618-e917efe49552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rules">
+      <UniqueIdentifier>{c7c1cda9-e832-4be3-89ec-98338b5117f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tests">
+      <UniqueIdentifier>{15f1e23d-bf43-41b6-bacb-9c7d1b822c91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utests">
+      <UniqueIdentifier>{36d146bc-b7c7-48eb-acbd-c380bd5b862a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bart_all">
+      <UniqueIdentifier>{cb87907e-4ac4-4eba-ad09-e5cabd4bb1c0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\calib\calib.c">
+      <Filter>calib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\calib\calmat.c">
+      <Filter>calib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\calib\cc.c">
+      <Filter>calib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\calib\direct.c">
+      <Filter>calib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\calib\estvar.c">
+      <Filter>calib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\calib\softweight.c">
+      <Filter>calib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\calib\walsh.c">
+      <Filter>calib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\dfwavelet\dfwavelet.c">
+      <Filter>dfwavelet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\dfwavelet\prox_dfwavelet.c">
+      <Filter>dfwavelet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\avg.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\bart_all_all.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\bbox.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\bench.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\bitmask.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cabs.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\caldir.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\calmat.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\carg.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\casorati.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cc.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ccapply.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cdf97.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\circshift.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\conj.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\conv.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\copy.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cpyphs.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\creal.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\crop.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\delta.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ecalib.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ecaltwo.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\estdelay.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\estdims.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\estshift.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\estvar.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extract.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fakeksp.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fft.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fftmod.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fftshift.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\filter.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\flatten.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\flip.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\fmac.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\homodyne.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\invert.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ismrmrd.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\itsense.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\join.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lrmatrix.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\main.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mandelbrot.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mat2cfl.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mip.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nlinv.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\noise.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\normalize.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nrmse.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nufft.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ones.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\pattern.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\phantom.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\pics.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\pocsense.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\poisson.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\poly.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\repmat.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\reshape.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\resize.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rof.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rss.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sake.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\saxpy.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scale.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sdot.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\show.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\slice.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\spow.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sqpics.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\squeeze.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\std.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\svd.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\threshold.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\toimg.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\traj.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\transpose.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\twixread.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\var.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\vec.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\version.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\walsh.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\wave.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\wavelet.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\wavepsf.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\whiten.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\window.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\wshfl.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\zeros.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\zexpj.c">
+      <Filter>bart_all</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grecon\italgo.c">
+      <Filter>grecon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\grecon\optreg.c">
+      <Filter>grecon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ismrm\read.c">
+      <Filter>ismrm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\admm.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\italgos.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\iter.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\iter2.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\iter3.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\iter4.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\itop.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\lad.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\lsqr.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\misc.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\monitor.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\niht.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\prox.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\thresh.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\iter\vec.c">
+      <Filter>iter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cge_nancheck.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cge_trans.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cgesdd.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cgesdd_work.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cgesvd.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cgesvd_work.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_che_nancheck.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cheev.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cheev_work.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cpo_nancheck.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cpo_trans.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cpotrf.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_cpotrf_work.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_ctr_nancheck.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_ctr_trans.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_ctrtri.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_ctrtri_work.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_lsame.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_xerbla.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_zge_nancheck.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_zge_trans.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_zgesdd.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_zgesdd_work.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_zhe_nancheck.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_zhe_trans.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_zheev.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_zheev_work.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_ztr_nancheck.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lapacke\lapacke_ztr_trans.c">
+      <Filter>lapacke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\finite_diff.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\fmac.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\grad.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\linop.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\lintest.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\realval.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\sampling.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\someops.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\sum.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\linops\waveop.c">
+      <Filter>linops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nlops\cast.c">
+      <Filter>nlops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nlops\chain.c">
+      <Filter>nlops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nlops\nlop.c">
+      <Filter>nlops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nlops\nltest.c">
+      <Filter>nlops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nlops\tenmul.c">
+      <Filter>nlops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\nlops\zexp.c">
+      <Filter>nlops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\noir\model.c">
+      <Filter>noir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\noir\nl.c">
+      <Filter>noir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\noir\recon.c">
+      <Filter>noir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\noncart\grid.c">
+      <Filter>noncart</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\noncart\nudft.c">
+      <Filter>noncart</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\noncart\nufft.c">
+      <Filter>noncart</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\blas.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\blockproc.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\casorati.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\chebfun.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\conv.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\convoaa.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\fft.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\fft-cuda.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\filter.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\flpmath.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\gpuops.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\init.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\iovec.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\lapack.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\linalg.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\loop.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\mdfft.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\mem.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\multind.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\ops.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\optimize.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\polynom.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\qform.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\rand.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\shuffle.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\simplex.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\specfun.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\splines.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\vec3.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\vecops.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\num\wavelet.c">
+      <Filter>num</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sake\sake.c">
+      <Filter>sake</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sense\model.c">
+      <Filter>sense</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sense\optcom.c">
+      <Filter>sense</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sense\pocs.c">
+      <Filter>sense</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sense\recon.c">
+      <Filter>sense</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\simu\biot_savart.c">
+      <Filter>simu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\simu\coil.c">
+      <Filter>simu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\simu\phantom.c">
+      <Filter>simu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\simu\sens.c">
+      <Filter>simu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\simu\shepplogan.c">
+      <Filter>simu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\wavelet\wavelet.c">
+      <Filter>wavelet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\wavelet\wavthresh.c">
+      <Filter>wavelet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\debug.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\dicom.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\Gadgetron.cc">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\io.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\misc.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\mmio.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\mmiocc.cc">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\mri.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\opts.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\Orchestra.cc">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\pd.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\png.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\resize.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\shrdptr.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\subpixel.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\utils.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\version.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\misc\ya_getopt.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lowrank\batchsvd.c">
+      <Filter>lowrank</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lowrank\lrthresh.c">
+      <Filter>lowrank</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lowrank\svthresh.c">
+      <Filter>lowrank</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_linalg.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_linop.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_linop_matrix.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_mdfft.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_multind.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_nlop.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_pattern.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_polynom.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_splines.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_types.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_window.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\utest.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_batchsvd.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_biot_savart.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_blas.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utests\test_flpmath.c">
+      <Filter>utests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\calib\calib.h">
+      <Filter>calib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\calib\calibcu.h">
+      <Filter>calib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\calib\calmat.h">
+      <Filter>calib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\calib\cc.h">
+      <Filter>calib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\calib\direct.h">
+      <Filter>calib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\calib\estvar.h">
+      <Filter>calib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\calib\softweight.h">
+      <Filter>calib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\calib\walsh.h">
+      <Filter>calib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\dfwavelet\dfwavelet.h">
+      <Filter>dfwavelet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\dfwavelet\dfwavelet_impl.h">
+      <Filter>dfwavelet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\dfwavelet\dfwavelet_kernels.h">
+      <Filter>dfwavelet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\dfwavelet\prox_dfwavelet.h">
+      <Filter>dfwavelet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\main.h">
+      <Filter>bart_all</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\grecon\italgo.h">
+      <Filter>grecon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\grecon\optreg.h">
+      <Filter>grecon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\ismrm\read.h">
+      <Filter>ismrm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\admm.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\italgos.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\iter.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\iter2.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\iter3.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\iter4.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\itop.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\lad.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\lsqr.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\misc.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\monitor.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\niht.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\prox.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\thresh.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\iter\vec.h">
+      <Filter>iter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lapacke\lapacke.h">
+      <Filter>lapacke</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lapacke\lapacke_mangling.h">
+      <Filter>lapacke</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lapacke\lapacke_utils.h">
+      <Filter>lapacke</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\finite_diff.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\fmac.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\grad.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\linop.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\lintest.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\realval.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\sampling.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\someops.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\sum.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\linops\waveop.h">
+      <Filter>linops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\nlops\cast.h">
+      <Filter>nlops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\nlops\chain.h">
+      <Filter>nlops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\nlops\nlop.h">
+      <Filter>nlops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\nlops\nltest.h">
+      <Filter>nlops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\nlops\tenmul.h">
+      <Filter>nlops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\nlops\zexp.h">
+      <Filter>nlops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\noir\model.h">
+      <Filter>noir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\noir\nl.h">
+      <Filter>noir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\noir\recon.h">
+      <Filter>noir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\noncart\grid.h">
+      <Filter>noncart</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\noncart\nudft.h">
+      <Filter>noncart</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\noncart\nufft.h">
+      <Filter>noncart</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\blas.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\blockproc.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\casorati.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\chebfun.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\conv.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\convoaa.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\fft.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\fft-cuda.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\filter.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\flpmath.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\gpukrnls.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\gpuops.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\init.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\iovec.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\lapack.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\linalg.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\loop.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\mdfft.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\mem.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\multind.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\ops.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\optimize.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\polynom.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\qform.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\rand.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\shuffle.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\simplex.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\specfun.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\splines.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\vec3.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\vecops.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\num\wavelet.h">
+      <Filter>num</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sake\sake.h">
+      <Filter>sake</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sense\bprecon.h">
+      <Filter>sense</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sense\model.h">
+      <Filter>sense</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sense\optcom.h">
+      <Filter>sense</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sense\pocs.h">
+      <Filter>sense</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sense\recon.h">
+      <Filter>sense</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\simu\biot_savart.h">
+      <Filter>simu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\simu\coil.h">
+      <Filter>simu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\simu\phantom.h">
+      <Filter>simu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\simu\sens.h">
+      <Filter>simu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\simu\shepplogan.h">
+      <Filter>simu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\wavelet\wavelet.h">
+      <Filter>wavelet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\wavelet\wavthresh.h">
+      <Filter>wavelet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\wavelet\wl3-cuda.h">
+      <Filter>wavelet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\cppmap.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\cppwrap.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\debug.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\dicom.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\io.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\misc.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\mmio.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\mri.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\nested.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\opts.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\pd.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\png.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\resize.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\shrdptr.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\subpixel.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\types.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\utils.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\version.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\misc\ya_getopt.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lowrank\batchsvd.h">
+      <Filter>lowrank</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lowrank\lrthresh.h">
+      <Filter>lowrank</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lowrank\svthresh.h">
+      <Filter>lowrank</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\utests\test_flpmath_data.h">
+      <Filter>utests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\utests\utest.h">
+      <Filter>utests</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\lapacke\LICENSE">
+      <Filter>lapacke</Filter>
+    </None>
+    <None Include="..\..\src\lapacke\README">
+      <Filter>lapacke</Filter>
+    </None>
+    <None Include="..\..\src\python\pyBART_ALL.c.in">
+      <Filter>python</Filter>
+    </None>
+    <None Include="..\..\src\misc\mmiocc.hh">
+      <Filter>misc</Filter>
+    </None>
+    <None Include="..\..\src\calib\calibcu.cu">
+      <Filter>calib</Filter>
+    </None>
+    <None Include="..\..\src\dfwavelet\dfwavelet_kernels.cu">
+      <Filter>dfwavelet</Filter>
+    </None>
+    <None Include="..\..\src\num\gpukrnls.cu">
+      <Filter>num</Filter>
+    </None>
+    <None Include="..\..\src\wavelet\wl3-cuda.cu">
+      <Filter>wavelet</Filter>
+    </None>
+    <None Include="..\..\rules\iter.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\lapacke.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\linops.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\lowrank.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\make_symbol_table.sh">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\misc.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\nlops.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\noir.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\noncart.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\num.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\sake.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\sense.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\simu.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\update_commands.sh">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\update-if-changed.sh">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\update-version.sh">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\wavelet.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\box.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\calib.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\dfwavelet.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\grecon.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\rules\ismrm.mk">
+      <Filter>rules</Filter>
+    </None>
+    <None Include="..\..\tests\fmac.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\gpu.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\homodyne.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\join.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\nlinv.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\nrmse.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\nufft.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\phantom.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\pics.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\poly.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\pythoncfl.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\pythoncfl.py">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\slice.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\squeeze.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\wave.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\wavelet.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\whiten.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\wshfl.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\casorati.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\cc.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\ccapply.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\cdf97.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\copy.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\ecalib.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\estdelay.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\fft.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\tests\flatten.mk">
+      <Filter>tests</Filter>
+    </None>
+    <None Include="..\..\utests\utests.ld">
+      <Filter>utests</Filter>
+    </None>
+    <None Include="..\..\utests\utests-collect.sh">
+      <Filter>utests</Filter>
+    </None>
+    <None Include="..\..\ar_lock.sh" />
+    <None Include="..\..\build_targets.mk" />
+    <None Include="..\..\git-version.sh" />
+    <None Include="..\..\LICENSE" />
+    <None Include="..\..\makedoc.sh" />
+    <None Include="..\..\Makefile" />
+    <None Include="..\..\README" />
+    <None Include="..\..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\CMakeLists.txt" />
+    <Text Include="..\..\version.txt" />
+  </ItemGroup>
+</Project>
