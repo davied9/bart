@@ -99,9 +99,6 @@
     <ClCompile Include="..\..\src\avg.c">
       <Filter>bart_all</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\bart_all_all.c">
-      <Filter>bart_all</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\bbox.c">
       <Filter>bart_all</Filter>
     </ClCompile>
@@ -815,6 +812,9 @@
     </ClCompile>
     <ClCompile Include="..\..\utests\test_flpmath.c">
       <Filter>utests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\bart.c">
+      <Filter>bart_all</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
