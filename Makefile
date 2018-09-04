@@ -346,6 +346,8 @@ LDFLAGS += -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -Wl,--al
 BLAS_L += -llapack -lblas -lgfortran -lquadmath
 endif
 
+BLAS_L += -L/usr/local/lib64 -lgfortran -L/usr/local/lib -lopenblas -Wl,-rpath /usr/local/lib
+$(info $$BLAS_L : ${BLAS_L})
 
 
 # Modules
