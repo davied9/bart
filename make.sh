@@ -1,0 +1,2 @@
+NOLAPACKE=1 DEBUG=1 make
+
