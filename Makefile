@@ -140,7 +140,8 @@ MATLAB_BASE ?= /usr/local/matlab/
 
 ISMRM_BASE ?= /usr/local/ismrmrd/
 
-
+# Additional Library
+ADDITIONAL_LIBRARY ?= 
 
 # Main build targets are defined in build_targets.mk so that both CMake and Make can use the same definitions
 # set values for TBASE TFLP TNUM TRECO TCALIB TMRI TSIM TIO in build_targets.mk
@@ -280,21 +281,30 @@ endif
 # BLAS/LAPACK
 
 ifeq ($(ACML),1)
-BLAS_H := -I$(ACML_BASE)/include
-BLAS_L := -L$(ACML_BASE)/lib -lgfortran -lacml_mp -Wl,-rpath $(ACML_BASE)/lib
-CPPFLAGS += -DUSE_ACML
+    BLAS_H := -I$(ACML_BASE)/include
+    BLAS_L := -L$(ACML_BASE)/lib -lgfortran -lacml_mp -Wl,-rpath $(ACML_BASE)/lib
+    CPPFLAGS += -DUSE_ACML
 else
-BLAS_H := -I$(BLAS_BASE)/include
-ifeq ($(BUILDTYPE), MacOSX)
-BLAS_L := -L$(BLAS_BASE)/lib -lopenblas
-else
-ifeq ($(NOLAPACKE),1)
-BLAS_L := -L$(BLAS_BASE)/lib -llapack -lblas
-CPPFLAGS += -Isrc/lapacke
-else
-BLAS_L := -L$(BLAS_BASE)/lib -llapacke -lblas
-endif
-endif
+    BLAS_H := -I$(BLAS_BASE)/include
+    BLAS_L := -L$(BLAS_BASE)/lib
+    ifeq ($(BUILDTYPE), MacOSX)
+        BLAS_L += -lopenblas
+    else
+        ifeq ($(NOLAPACKE),1)
+            BLAS_L += -llapack
+            CPPFLAGS += -Isrc/lapacke
+        else
+            BLAS_L += -llapacke
+        endif
+        ifeq ($(OPENBLAS),1)
+            BLAS_L += -lopenblas
+        else
+            BLAS_L += -lblas
+        endif
+    endif
+    ifeq ($(GFORTRAN),1)
+        BLAS_L += -lgfortran
+    endif
 endif
 
 
@@ -345,9 +355,6 @@ ifeq ($(SLINK),1)
 LDFLAGS += -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -Wl,--allow-multiple-definition
 BLAS_L += -llapack -lblas -lgfortran -lquadmath
 endif
-
-BLAS_L += -L/usr/local/lib64 -lgfortran -L/usr/local/lib -lopenblas -Wl,-rpath /usr/local/lib
-$(info $$BLAS_L : ${BLAS_L})
 
 
 # Modules
@@ -428,18 +435,18 @@ endif
 
 .SECONDEXPANSION:
 $(TARGETS): % : src/main.c $(srcdir)/%.o $$(MODULES_%) $(MODULES)
-	$(CC) $(LDFLAGS) $(CFLAGS) -Dmain_real=main_$@ -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) $(PNG_L) $(ISMRM_L) -lm
+	$(CC) $(LDFLAGS) $(CFLAGS) -Dmain_real=main_$@ -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) $(PNG_L) $(ISMRM_L) -L$(ADDITIONAL_LIBRARY) -lm
 #	rm $(srcdir)/$@.o
 
 UTESTS=$(shell $(root)/utests/utests-collect.sh ./utests/$@.c)
 
 .SECONDEXPANSION:
 $(UTARGETS): % : utests/utest.c utests/%.o $$(MODULES_%) $(MODULES)
-	$(CC) $(LDFLAGS) $(CFLAGS) -DUTESTS="$(UTESTS)" -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) -lm
+	$(CC) $(LDFLAGS) $(CFLAGS) -DUTESTS="$(UTESTS)" -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) -L$(ADDITIONAL_LIBRARY) -lm
 
 
 # linker script version - does not work on MacOS X
-#	$(CC) $(LDFLAGS) -Wl,-Tutests/utests.ld $(CFLAGS) -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) -lm
+#	$(CC) $(LDFLAGS) -Wl,-Tutests/utests.ld $(CFLAGS) -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) -L$(ADDITIONAL_LIBRARY) -lm
 
 clean:
 	rm -f `find $(srcdir) -name "*.o"`
