@@ -85,10 +85,15 @@ ALLDEPS = $(shell find $(srcdir) utests -name ".*.d")
 
 # Compilation flags
 
-OPT = -O3 -ffast-math
 CPPFLAGS ?= -Wall -Wextra
 CFLAGS ?= $(OPT) -Wmissing-prototypes
 CXXFLAGS ?= $(OPT)
+
+OPT = -ffast-math
+ifneq ($(NOOPTIMIZATION), 1)
+	OPT_LEVEL ?= 3
+	OPT += -O$(OPT_LEVEL)
+endif
 
 ifeq ($(BUILDTYPE), MacOSX)
 	CC ?= gcc-mp-6
