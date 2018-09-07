@@ -1,9 +1,0 @@
-*
-!*/
-
-!.gitignore*
-
-!*.vcxproj*
-!*.sln
-
-!*.py
