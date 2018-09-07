@@ -1,10 +1,10 @@
 /* Copyright 2015-2017. The Regents of the University of California.
- * Copyright 2015-2016. Martin Uecker.
+ * Copyright 2015-2018. Martin Uecker.
  * All rights reserved. Use of this source code is governed by
  * a BSD-style license which can be found in the LICENSE file.
  *
  * Authors:
- * 2015-2016 Martin Uecker <martin.uecker@med.uni-goettingen.de>
+ * 2015-2018 Martin Uecker <martin.uecker@med.uni-goettingen.de>
  * 2015-2016 Frank Ong <frankong@berkeley.edu>
  * 2015-2017 Jon Tamir <jtamir@eecs.berkeley.edu>
  *
@@ -57,6 +57,7 @@ void help_reg(void)
 		        "-R N:A:B:C\tNormalized Iterative Hard Thresholding (NIHT), image domain\n"
 		        "\t\tC is an integer percentage, i.e. from 0-100\n"
 		        "-R H:A:B:C\tNIHT, wavelet domain\n"
+			"-R F:A:B:C\tl1-Fourier\n"
 			"-R T:A:B:C\ttotal variation\n"
 			"-R T:7:0:.01\t3D isotropic total variation with 0.01 regularization.\n"
 			"-R L:7:7:.02\tLocally low rank with spatial decimation and 0.02 regularization.\n"
@@ -98,14 +99,12 @@ bool opt_reg(void* ptr, char c, const char* optarg)
 			regs[r].xform = NIHTWAV;
 			int ret = sscanf(optarg, "%*[^:]:%d:%d:%d", &regs[r].xflags, &regs[r].jflags, &regs[r].k);
 			assert(3 == ret);
-			p->algo = NIHT;
 		}
 		else if (strcmp(rt, "N") == 0) {
 			
 			regs[r].xform = NIHTIM;
 			int ret = sscanf(optarg, "%*[^:]:%d:%d:%d", &regs[r].xflags, &regs[r].jflags, &regs[r].k);
 			assert(3 == ret);
-			p->algo = NIHT;
 		}
 		else if (strcmp(rt, "L") == 0) {
 
@@ -114,6 +113,8 @@ bool opt_reg(void* ptr, char c, const char* optarg)
 			assert(3 == ret);
 		}
 		else if (strcmp(rt, "M") == 0) {
+
+			// FIXME: here an explanation is missing
 
 			regs[r].xform = regs[0].xform;
 			regs[r].xflags = regs[0].xflags;
@@ -129,7 +130,6 @@ bool opt_reg(void* ptr, char c, const char* optarg)
 			regs[r].xform = TV;
 			int ret = sscanf(optarg, "%*[^:]:%d:%d:%f", &regs[r].xflags, &regs[r].jflags, &regs[r].lambda);
 			assert(3 == ret);
-			p->algo = ADMM;
 		}
 		else if (strcmp(rt, "P") == 0) {
 
@@ -143,7 +143,6 @@ bool opt_reg(void* ptr, char c, const char* optarg)
 			int ret = sscanf(optarg, "%*[^:]:%d:%f", &regs[r].jflags, &regs[r].lambda);
 			assert(2 == ret);
 			regs[r].xflags = 0u;
-			p->algo = ADMM;
 		}
 		else if (strcmp(rt, "R2") == 0) {
 
@@ -151,7 +150,6 @@ bool opt_reg(void* ptr, char c, const char* optarg)
 			int ret = sscanf(optarg, "%*[^:]:%d:%f", &regs[r].jflags, &regs[r].lambda);
 			assert(2 == ret);
 			regs[r].xflags = 0u;
-			p->algo = ADMM;
 		}
 		else if (strcmp(rt, "I") == 0) {
 
@@ -159,6 +157,13 @@ bool opt_reg(void* ptr, char c, const char* optarg)
 			int ret = sscanf(optarg, "%*[^:]:%d:%f", &regs[r].jflags, &regs[r].lambda);
 			assert(2 == ret);
 			regs[r].xflags = 0u;
+		}
+		else if (strcmp(rt, "S") == 0) {
+
+			regs[r].xform = POS;
+			regs[r].lambda = 0u;
+			regs[r].xflags = 0u;
+			regs[r].jflags = 0u;
 		}
 		else if (strcmp(rt, "Q") == 0) {
 
@@ -220,7 +225,6 @@ bool opt_reg(void* ptr, char c, const char* optarg)
 bool opt_reg_init(struct opt_reg_s* ropts)
 {
 	ropts->r = 0;
-	ropts->algo = CG;
 	ropts->lambda = -1;
 	ropts->k = 0;
 
@@ -473,6 +477,14 @@ void opt_reg_configure(unsigned int N, const long img_dims[N], struct opt_reg_s*
 			trafos[nr] = linop_identity_create(DIMS, img_dims);
 			prox_ops[nr] = prox_thresh_create(DIMS, img_dims, regs[nr].lambda, regs[nr].jflags);
 			break;
+
+		case POS:
+			debug_printf(DP_INFO, "non-negative constraint\n");
+
+			trafos[nr] = linop_identity_create(DIMS, img_dims);
+			prox_ops[nr] = prox_nonneg_create(DIMS, img_dims);
+			break;
+
 
 		case L2IMG:
 			debug_printf(DP_INFO, "l2 regularization: %f\n", regs[nr].lambda);

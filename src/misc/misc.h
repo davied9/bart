@@ -1,6 +1,7 @@
 /* Copyright 2013-2015. The Regents of the University of California.
  * Copyright 2015-2016. Martin Uecker.
  * Copyright 2017. University of Oxford.
+ * Copyright 2017-2018. Damien Nguyen
  * All rights reserved. Use of this source code is governed by
  * a BSD-style license which can be found in the LICENSE file.
  */
@@ -11,6 +12,8 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdnoreturn.h>
+
+#include "misc/nested.h"
 
 #ifndef M_PI
 #define M_PI 3.1415926535897932384626433832795
@@ -50,14 +53,31 @@ extern void warn_nonnull_ptr(void*);
 
 
 extern int parse_cfl(_Complex float res[1], const char* str);
-#ifndef __CUDACC__
+#ifndef __cplusplus
 extern noreturn void error(const char* str, ...);
 #else
-extern void error(const char* str, ...);
+extern __attribute__((noreturn)) void error(const char* str, ...);
 #endif
+
+
+extern int error_catcher(int fun(int argc, char* argv[__VLA(argc)]), int argc, char* argv[__VLA(argc)]);
+
+extern int bart_printf(const char* fmt, ...);
 
 extern void print_dims(int D, const long dims[__VLA(D)]);
 extern void debug_print_dims(int dblevel, int D, const long dims[__VLA(D)]);
+
+#ifdef REDEFINE_PRINTF_FOR_TRACE
+#define debug_print_dims(...) \
+	debug_print_dims_trace(__FUNCTION__, __FILE__, __LINE__, __VA_ARGS__)
+#endif
+
+extern void debug_print_dims_trace(const char* func_name,
+				   const char* file,
+				   unsigned int line,
+				   int dblevel,
+				   int D,
+				   const long dims[__VLA(D)]);
 
 typedef int (*quicksort_cmp_t)(const void* data, unsigned int a, unsigned int b);
 
@@ -79,6 +99,8 @@ extern unsigned int bitcount(unsigned int flags);
 
 extern const char* command_line;
 extern void save_command_line(int argc, char* argv[__VLA(argc)]);
+
+extern _Bool safe_isnanf(float x);
 
 #include "misc/cppwrap.h"
 

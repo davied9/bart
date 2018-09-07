@@ -129,6 +129,8 @@ extern void md_abs2(unsigned int D, const long dim[__VLA(D)], const long ostr[__
 extern void md_zabs(unsigned int D, const long dim[__VLA(D)], _Complex float* optr, const _Complex float* iptr);
 extern void md_zabs2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr[__VLA(D)], const _Complex float* iptr);
 
+extern void md_zmax(unsigned int D, const long dims[__VLA(D)], _Complex float* optr, const _Complex float* iptr1, const _Complex float* iptr2);
+extern void md_zmax2(unsigned int D, const long dims[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr1[__VLA(D)], const _Complex float* iptr1, const long istr2[__VLA(D)], const _Complex float* iptr2);
 
 extern void md_max(unsigned int D, const long dim[__VLA(D)], float* optr, const float* iptr1, const float* iptr2);
 extern void md_max2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], float* optr, const long istr1[__VLA(D)], const float* iptr1, const long istr2[__VLA(D)], const float* iptr2);
@@ -177,14 +179,24 @@ extern void md_zcmp2(unsigned int D, const long dim[__VLA(D)], const long ostr[_
 extern void md_zexpj(unsigned int D, const long dim[__VLA(D)], _Complex float* optr, const _Complex float* iptr);
 extern void md_zexpj2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr[__VLA(D)], const _Complex float* iptr);
 
+extern void md_zexp(unsigned int D, const long dim[__VLA(D)], _Complex float* optr, const _Complex float* iptr);
+extern void md_zexp2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr[__VLA(D)], const _Complex float* iptr);
+
 extern void md_zarg(unsigned int D, const long dim[__VLA(D)], _Complex float* optr, const _Complex float* iptr);
 extern void md_zarg2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr[__VLA(D)], const _Complex float* iptr);
 
+extern void md_zlessequal(unsigned int D, const long dim[__VLA(D)], _Complex float* optr, const _Complex float* iptr1, const _Complex float* iptr2);
+extern void md_zlessequal2(unsigned int D, const long dims[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr1[__VLA(D)], const _Complex float* iptr1, const long istr2[__VLA(D)], const _Complex float* iptr2);
 
 extern void md_lessequal(unsigned int D, const long dim[__VLA(D)], float* optr, const float* iptr1, const float* iptr2);
 extern void md_lessequal2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], float* optr, const long istr1[__VLA(D)], const float* iptr1, const long istr2[__VLA(D)], const float* iptr2);
 extern void md_slessequal(unsigned int D, const long dim[__VLA(D)], float* optr, const float* iptr, float val);
 extern void md_slessequal2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], float* optr, const long istr[__VLA(D)], const float* iptr, float val);
+
+extern void md_zgreatequal(unsigned int D, const long dims[__VLA(D)], _Complex float* optr, const _Complex float* iptr1, const _Complex float* iptr2);
+extern void md_zgreatequal2(unsigned int D, const long dims[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr1[__VLA(D)], const _Complex float* iptr1, const long istr2[__VLA(D)], const _Complex float* iptr2);
+extern void md_zsgreatequal(unsigned int D, const long dim[__VLA(D)], _Complex float* optr, const _Complex float* iptr, float val);
+extern void md_zsgreatequal2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr[__VLA(D)], const _Complex float* iptr, float val);
 
 extern void md_greatequal(unsigned int D, const long dim[__VLA(D)], float* optr, const float* iptr1, const float* iptr2);
 extern void md_greatequal2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], float* optr, const long istr1[__VLA(D)], const float* iptr1, const long istr2[__VLA(D)], const float* iptr2);
@@ -258,6 +270,7 @@ extern void md_double2float2(unsigned int D, const long dims[__VLA(D)], const lo
 extern void md_zfill2(unsigned int D, const long dim[__VLA(D)], const long str[__VLA(D)], _Complex float* ptr, _Complex float val);
 extern void md_zfill(unsigned int D, const long dim[__VLA(D)], _Complex float* ptr, _Complex float val);
 
+extern void md_zsmax2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr[__VLA(D)], const _Complex float* iptr, float val);
 
 extern void md_smin2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], float* optr, const long istr[__VLA(D)], const float* iptr, float val);
 extern void md_smin(unsigned int D, const long dim[__VLA(D)], float* optr, const float* iptr, float val);
@@ -277,6 +290,8 @@ extern void md_zfdiff_backwards(unsigned int D, const long dims[__VLA(D)], unsig
 
 extern void md_zfftmod(unsigned int D, const long dim[__VLA(D)], _Complex float* optr, const _Complex float* iptr, _Bool inv, double phase);
 extern void md_zfftmod2(unsigned int D, const long dim[__VLA(D)], const long ostr[__VLA(D)], _Complex float* optr, const long istr[__VLA(D)], const _Complex float* iptr, _Bool inv, double phase);
+
+extern void md_zsum(unsigned int D, const long dims[__VLA(D)], unsigned int flags, _Complex float* dst, const _Complex float* src);
 
 
 #include "misc/cppwrap.h"

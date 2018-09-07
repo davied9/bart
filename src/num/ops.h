@@ -1,5 +1,5 @@
 /* Copyright 2014-2015. The Regents of the University of California.
- * Copyright 2016-2017. Martin Uecker.
+ * Copyright 2016-2018. Martin Uecker.
  * All rights reserved. Use of this source code is governed by
  * a BSD-style license which can be found in the LICENSE file.
  */
@@ -56,6 +56,14 @@ extern const struct operator_s* operator_identity_create(unsigned int N, const l
 extern const struct operator_s* operator_identity_create2(unsigned int N, const long dims[__VLA(N)],
 					const long ostr[__VLA(N)], const long istr[__VLA(N)]);
 
+
+extern const struct operator_s* operator_zero_create(unsigned int N, const long dims[N]);
+extern const struct operator_s* operator_zero_create2(unsigned int N, const long dims[N], const long ostrs[N]);
+extern const struct operator_s* operator_null_create(unsigned int N, const long dims[N]);
+extern const struct operator_s* operator_null_create2(unsigned int N, const long dims[N], const long ostrs[N]);
+
+
+
 extern const struct operator_s* operator_chain(const struct operator_s* a, const struct operator_s* b);
 extern const struct operator_s* operator_chainN(unsigned int N, const struct operator_s* ops[__VLA(N)]);
 
@@ -88,6 +96,9 @@ extern void operator_p_apply_unchecked(const struct operator_p_s* op, float mu, 
 // get functions
 struct iovec_s;
 extern unsigned int operator_nr_args(const struct operator_s* op);
+extern unsigned int operator_nr_in_args(const struct operator_s* op);
+extern unsigned int operator_nr_out_args(const struct operator_s* op);
+extern unsigned int operator_ioflags(const struct operator_s* op);
 
 extern const struct iovec_s* operator_arg_domain(const struct operator_s* op, unsigned int n);
 extern const struct iovec_s* operator_domain(const struct operator_s* op);
@@ -111,9 +122,23 @@ extern const struct operator_s* operator_loop2(unsigned int N, const unsigned in
 				const long dims[D], const long (*strs)[D],
 				const struct operator_s* op);
 
+const struct operator_s* operator_loop_parallel2(unsigned int N, const unsigned int D,
+				const long dims[D], const long (*strs)[D],
+				const struct operator_s* op,
+				unsigned int flags, _Bool gpu);
+
+
 extern const struct operator_s* operator_loop(unsigned int D, const long dims[D], const struct operator_s* op);
+extern const struct operator_s* operator_loop_parallel(unsigned int D, const long dims[D], const struct operator_s* op, unsigned int parallel, _Bool gpu);
 
 
+extern const struct operator_s* operator_combi_create(int N, const struct operator_s* x[N]);
+extern const struct operator_s* operator_link_create(const struct operator_s* op, unsigned int o, unsigned int i);
+
+extern const struct operator_s* operator_permute(const struct operator_s* op, int N, const int perm[N]);
+
+
+extern _Bool operator_zero_or_null_p(const struct operator_s* op);
 
 #include "misc/cppwrap.h"
 

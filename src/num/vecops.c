@@ -1,13 +1,13 @@
-/* Copyright 2013-2017. The Regents of the University of California.
- * Copyright 2016. Martin Uecker.
+/* Copyright 2013-2018. The Regents of the University of California.
+ * Copyright 2016-2018. Martin Uecker.
  * Copyright 2017. University of Oxford.
  * All rights reserved. Use of this source code is governed by
  * a BSD-style license which can be found in the LICENSE file.
  *
  * Authors:
- * 2011-2016 Martin Uecker <martin.uecker@med.uni-goettingen.de>
+ * 2011-2017 Martin Uecker <martin.uecker@med.uni-goettingen.de>
  * 2014 Frank Ong <frankong@berkeley.edu>
- * 2014-2017 Jon Tamir <jtamir@eecs.berkeley.edu>
+ * 2014-2018 Jon Tamir <jtamir@eecs.berkeley.edu>
  * 2017 Sofia Dimoudi <sofia.dimoudi@cardiov.ox.ac.uk>
  *
  *
@@ -303,6 +303,12 @@ static void zphsr(long N, complex float* dst, const complex float* src)
 	}
 }
 
+static void zexp(long N, complex float* dst, const complex float* src)
+{
+	for (long i = 0; i < N; i++)
+		dst[i] = cexpf(src[i]);
+}
+
 static void zexpj(long N, complex float* dst, const complex float* src)
 {
 	for (long i = 0; i < N; i++)
@@ -322,10 +328,23 @@ static void zabs(long N, complex float* dst, const complex float* src)
 }
 
 
+static void zmax(long N, complex float* dst, const complex float* src1, const complex float* src2)
+{
+	for (long i = 0; i < N; i++)
+		dst[i] = (crealf(src1[i]) > crealf(src2[i])) ? src1[i] : src2[i];
+}
+
+
 static void max(long N, float* dst, const float* src1, const float* src2)
 {
 	for (long i = 0; i < N; i++)
 		dst[i] = MAX(src1[i], src2[i]);
+}
+
+static void smax(long N, float* dst, const float* src1, const float val)
+{
+	for (long i = 0; i < N; i++)
+		dst[i] = MAX(src1[i], val);
 }
 
 
@@ -347,6 +366,13 @@ static void vec_sqrt(long N, float* dst, const float* src)
 {
 	for (long i = 0; i < N; i++)
 		dst[i] = sqrtf(src[i]);
+}
+
+
+static void vec_zle(long N, complex float* dst, const complex float* src1, const complex float* src2)
+{
+	for (long i = 0; i < N; i++)
+		dst[i] = (crealf(src1[i]) <= crealf(src2[i]));
 }
 
 
@@ -521,6 +547,19 @@ static complex double fftmod_phase2(long n, int j, bool inv, double phase)
 
 static void zfftmod(long N, complex float* dst, const complex float* src, unsigned int n, bool inv, double phase)
 {
+#if 1
+	if (0 == n % 2) {
+
+		complex float ph = fftmod_phase2(n, 0, inv, phase);
+
+		for (long i = 0; i < N; i++)
+			for (unsigned int j = 0; j < n; j++)
+				dst[i * n + j] = src[i * n + j] * ((0 == j % 2) ? ph : -ph);
+
+		return;
+	}
+#endif
+
 	for (long i = 0; i < N; i++)
 		for (unsigned int j = 0; j < n; j++)
 			dst[i * n + j] = src[i * n + j] * fftmod_phase2(n, j, inv, phase);
@@ -553,6 +592,7 @@ const struct vec_ops cpu_ops = {
 	.pow = vec_pow,
 	.sqrt = vec_sqrt,
 
+	.zle = vec_zle,
 	.le = vec_le,
 
 	.zmul = zmul,
@@ -569,6 +609,7 @@ const struct vec_ops cpu_ops = {
 	.zphsr = zphsr,
 	.zconj = zconj,
 	.zexpj = zexpj,
+	.zexp = zexp,
 	.zarg = zarg,
 	.zabs = zabs,
 
@@ -576,6 +617,9 @@ const struct vec_ops cpu_ops = {
 	.zdiv_reg = zdiv_reg,
 	.zfftmod = zfftmod,
 
+	.zmax = zmax,
+
+	.smax = smax,
 	.max = max,
 	.min = min,
 

@@ -1,10 +1,11 @@
-/* Copyright 2013-2017. The Regents of the University of California.
- * All rights reserved. Use of this source code is governed by 
+/* Copyright 2013-2018. The Regents of the University of California.
+ * Copyright 2017-2018. Martin Uecker.
+ * All rights reserved. Use of this source code is governed by
  * a BSD-style license which can be found in the LICENSE file.
  *
  * Authors:
- * 2012-03-24 Martin Uecker <uecker@eecs.berkeley.edu>
- * 2015,2017 Jon Tamir <jtamir@eecs.berkeley.edu>
+ * 2012-2018 Martin Uecker <martin.uecker@med.uni-goettingen.de>
+ * 2015-2018 Jon Tamir <jtamir@eecs.berkeley.edu>
  *
  * 
  * This file defines basic operations on vectors of floats/complex floats
@@ -505,6 +506,20 @@ extern "C" void cuda_zphsr(long N, _Complex float* dst, const _Complex float* sr
 }
 
 
+__global__ void kern_zexp(int N, cuFloatComplex* dst, const cuFloatComplex* src)
+{
+	int start = threadIdx.x + blockDim.x * blockIdx.x;
+	int stride = blockDim.x * gridDim.x;
+
+	for (int i = start; i < N; i += stride)
+		dst[i] = zexp(src[i]);
+}
+
+extern "C" void cuda_zexp(long N, _Complex float* dst, const _Complex float* src)
+{
+	kern_zexp<<<gridsize(N), blocksize(N)>>>(N, (cuFloatComplex*)dst, (const cuFloatComplex*)src);
+}
+
 
 __global__ void kern_zexpj(int N, cuFloatComplex* dst, const cuFloatComplex* src)
 {
@@ -659,6 +674,21 @@ extern "C" void cuda_zreal(long N, _Complex float* dst, const _Complex float* sr
 }
 
 
+__global__ void kern_zle(int N, cuFloatComplex* dst, const cuFloatComplex* src1, const cuFloatComplex* src2)
+{
+	int start = threadIdx.x + blockDim.x * blockIdx.x;
+	int stride = blockDim.x * gridDim.x;
+
+	for (int i = start; i < N; i += stride)
+		dst[i] = make_cuFloatComplex((cuCrealf(src1[i]) <= cuCrealf(src2[i])), 0.);
+}
+
+extern "C" void cuda_zle(long N, _Complex float* dst, const _Complex float* src1, const _Complex float* src2)
+{
+	kern_zle<<<gridsize(N), blocksize(N)>>>(N, (cuFloatComplex*)dst, (const cuFloatComplex*)src1, (const cuFloatComplex*)src2);
+}
+
+
 __global__ void kern_le(int N, float* dst, const float* src1, const float* src2)
 {
 	int start = threadIdx.x + blockDim.x * blockIdx.x;
@@ -729,8 +759,42 @@ extern "C" void cuda_zfftmod(long N, _Complex float* dst, const _Complex float* 
 }
 
 
+
+__global__ void kern_zmax(int N, cuFloatComplex* dst, const cuFloatComplex* src1, const cuFloatComplex* src2)
+{
+	int start = threadIdx.x + blockDim.x * blockIdx.x;
+	int stride = blockDim.x * gridDim.x;
+
+	for (int i = start; i < N; i += stride)
+		dst[i] = (cuCrealf(src1[i]) > cuCrealf(src2[i])) ? src1[i] : src2[i];
+}
+
+
+extern "C" void cuda_zmax(long N, _Complex float* dst, const _Complex float* src1, const _Complex float* src2)
+{
+	kern_zmax<<<gridsize(N), blocksize(N)>>>(N, (cuFloatComplex*)dst, (const cuFloatComplex*)src1, (const cuFloatComplex*)src2);
+}
+
+
+
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
+
+
+__global__ void kern_smax(int N, float* dst, const float* src1, const float val)
+{
+	int start = threadIdx.x + blockDim.x * blockIdx.x;
+	int stride = blockDim.x * gridDim.x;
+
+	for (int i = start; i < N; i += stride)
+		dst[i] = MAX(src1[i], val);
+}
+
+
+extern "C" void cuda_smax(long N, float* dst, const float* src1, const float val)
+{
+	kern_smax<<<gridsize(N), blocksize(N)>>>(N, dst, src1, val);
+}
 
 
 __global__ void kern_max(int N, float* dst, const float* src1, const float* src2)

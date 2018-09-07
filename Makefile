@@ -23,6 +23,14 @@ DEBUG?=0
 FFTWTHREADS?=1
 ISMRMRD?=0
 
+LOG_BACKEND?=0
+LOG_SIEMENS_BACKEND?=0
+LOG_ORCHESTRA_BACKEND?=0
+LOG_GADGETRON_BACKEND?=0
+ENABLE_MEM_CFL?=0
+MEMONLY_CFL?=0
+
+
 DESTDIR ?= /
 PREFIX ?= usr/local/
 
@@ -183,6 +191,7 @@ MODULES_lrmatrix = -llowrank -liter -llinops
 MODULES_estdims = -lnoncart -llinops
 MODULES_ismrmrd = -lismrm
 MODULES_wavelet = -llinops -lwavelet
+MODULES_wshfl = -llinops -lwavelet -liter -llowrank -llinops
 
 
 MAKEFILES = $(root)/Makefiles/Makefile.*
@@ -227,9 +236,9 @@ default all clean allclean distclean doc/commands.txt doxygen test utest gputest
 else
 
 
-CPPFLAGS += $(DEPFLAG) -I$(srcdir)/
-CFLAGS += -std=gnu11 -I$(srcdir)/
-CXXFLAGS += -I$(srcdir)/
+CPPFLAGS += $(DEPFLAG) -iquote $(srcdir)/
+CFLAGS += -std=gnu11
+CXXFLAGS += -std=c++11
 
 
 
@@ -353,6 +362,35 @@ ISMRM_H :=
 ISMRM_L :=
 endif
 
+# Enable in-memory CFL files
+
+ifeq ($(ENABLE_MEM_CFL),1)
+CPPFLAGS += -DUSE_MEM_CFL
+miscextracxxsrcs += $(srcdir)/misc/mmiocc.cc
+LDFLAGS += -lstdc++
+endif
+
+# Only allow in-memory CFL files (ie. disable support for all other files)
+
+ifeq ($(MEMONLY_CFL),1)
+CPPFLAGS += -DMEMONLY_CFL
+miscextracxxsrcs += $(srcdir)/misc/mmiocc.cc
+LDFLAGS += -lstdc++
+endif
+
+# Logging backends
+
+ifeq ($(LOG_BACKEND),1)
+CPPFLAGS += -DUSE_LOG_BACKEND
+ifeq ($(LOG_SIEMENS_BACKEND),1)
+miscextracxxsrcs += $(srcdir)/misc/UTrace.cc
+endif
+ifeq ($(LOG_ORCHESTRA_BACKEND),1)
+miscextracxxsrcs += $(srcdir)/misc/Orchestra.cc
+endif
+endif
+
+
 # change for static linking
 
 ifeq ($(SLINK),1)
@@ -440,14 +478,14 @@ endif
 
 .SECONDEXPANSION:
 $(TARGETS): % : src/main.c $(srcdir)/%.o $$(MODULES_%) $(MODULES)
-	$(CC) $(LDFLAGS) $(CFLAGS) -Dmain_real=main_$@ -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) $(PNG_L) $(ISMRM_L) -L$(ADDITIONAL_LIBRARY) -lm
+	$(CC) $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) -Dmain_real=main_$@ -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) $(PNG_L) $(ISMRM_L) -L$(ADDITIONAL_LIBRARY) -lm
 #	rm $(srcdir)/$@.o
 
 UTESTS=$(shell $(root)/utests/utests-collect.sh ./utests/$@.c)
 
 .SECONDEXPANSION:
 $(UTARGETS): % : utests/utest.c utests/%.o $$(MODULES_%) $(MODULES)
-	$(CC) $(LDFLAGS) $(CFLAGS) -DUTESTS="$(UTESTS)" -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) -L$(ADDITIONAL_LIBRARY) -lm
+	$(CC) $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) -DUTESTS="$(UTESTS)" -o $@ $+ $(FFTW_L) $(CUDA_L) $(BLAS_L) -L$(ADDITIONAL_LIBRARY) -lm
 
 
 # linker script version - does not work on MacOS X
